@@ -1,0 +1,55 @@
+/* pages/goodDetail/goodDetail.wxss */
+page {
+  background-color: #EEEFF1;
+}
+.banner {
+  width: 750rpx;
+  height: 750rpx;
+}
+.banner image {
+  width: 750rpx;
+  height: 750rpx;
+}
+.desc {
+  padding: 0 20rpx;
+  position: relative;
+  background-color: white;
+}
+.desc .good-name {
+  font-size: 30rpx;
+}
+.good-prize {
+  font-size: 28rpx;
+  color: red;
+}
+.original-prize {
+  font-size: 26rpx;
+  color: gray;
+  text-decoration: line-through;
+}
+.sales {
+  position: absolute;
+  right: 20rpx;
+  bottom: 0;
+  font-size: 26rpx;
+  color: gray;
+}
+.good-detail-image {
+  width: 750rpx;
+  margin-top: 20rpx;
+}
+.details-container {
+  display: flex;
+  flex-direction: column;
+  padding: 0rpx 10rpx 110rpx 10rpx;
+}
+.details-image {
+  width: 730rpx;
+}
+.footer {
+  width: 750rpx;
+  height: 100rpx;
+  position: fixed;
+  bottom: 0;
+  background-color: white;
+}

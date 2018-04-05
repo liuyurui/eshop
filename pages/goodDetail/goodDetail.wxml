@@ -1,0 +1,24 @@
+<!--pages/goodDetail/goodDetail.wxml-->
+<swiper class='banner' autoplay='{{autoplay}}' circular>
+  <block wx:for='{{banners}}'>
+    <swiper-item>
+      <image src='{{item}}' mode='widthFix'></image>
+    </swiper-item>
+  </block>
+</swiper>
+<view class='desc'>
+  <text class='good-name'>{{good.goodName}}</text>
+  <view>
+    <text class='good-prize'>￥{{good.prize}}</text>
+    <text class='original-prize'>￥{{good.originalPrize}}</text>
+  </view>
+  <text class='sales'>{{good.sales}}</text>
+</view>
+<image class='good-detail-image' src='/image/good_detail.png' mode='widthFix'></image>
+
+<view class='details-container'>
+  <image class='details-image' wx:for='{{details}}' src='{{item}}' lazy-load='true' mode='widthFix'></image>
+</view>
+
+<view class='footer'>
+</view>

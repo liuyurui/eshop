@@ -1,0 +1,26 @@
+<!--pages/home/home.wxml-->
+<!--banner-->
+<swiper class="banner" autoplay='{{autoplay}}' circular>
+  <block wx:for="{{banners}}">
+    <swiper-item>
+      <image src="{{item.img}}" data-src="{{item}}" mode="aspectFill" bindtap='goGoodDetail'></image>
+    </swiper-item>
+  </block>
+</swiper>
+<!--主题区-->
+<view>
+  <block wx:for="{{subjects}}">
+    <image class="subject-banner" src="{{item.img}}" mode='aspectFill'></image>
+    <view class="goods-container">
+      <view class='good' wx:for="{{item.goods}}" wx:for-item='good' bindtap='goGoodDetail' data-src='{{good}}'>
+        <image src='{{good.img}}' lazy-load='true' mode='aspectFill'></image>
+        <text class='title'>{{good.goodName}}</text>
+        <view>
+          <text class='prize'>￥{{good.prize}}</text>
+          <text class='original-prize'>￥{{good.originalPrize}}</text>
+        </view>
+        <text class='sales'>{{good.sales}}</text>
+      </view>
+    </view>
+  </block>
+</view>
