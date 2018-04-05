@@ -34,6 +34,8 @@ App({
     })
   },
   globalData: {
-    userInfo: null
+    userInfo: null,
+    baseurl: 'https://sapp.duning.net/fruitfac/',
+    seller_id: 'asd'
   }
 })

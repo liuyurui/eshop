@@ -11,7 +11,7 @@
   width: 750rpx;
   height: 130rpx;
 }
-.goods-container {
+.products-container {
   padding: 0 20rpx 12rpx 20rpx;
   display: flex;
   flex-wrap: wrap;
@@ -19,7 +19,7 @@
   justify-content: space-between;
   background-color: #EEEFF1;
 }
-.good {
+.product {
   width: 345rpx;
   height: 520rpx;
   box-sizing: content-box;
@@ -28,15 +28,15 @@
   position: relative;
   margin-top: 20rpx;
 }
-.good view {
+.product view {
   position: relative;
   padding: 0;
 }
-.good image {
+.product image {
   width: 345rpx;
   height: 345rpx;
 }
-.good .title {
+.product .title {
   display: -webkit-box;
   font-size: 30rpx;
   color: #000000;

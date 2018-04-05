@@ -1,4 +1,6 @@
 // pages/home/home.js
+var app = getApp()
+
 Page({
 
   /**
@@ -6,64 +8,94 @@ Page({
    */
   data: {
     autoplay: false,
-    banners: [{
-      "img": "https://sapp-eshop.oss-cn-beijing.aliyuncs.com/banner1.png",
-      "goodId": "113",
-      "goodName": "【秘鲁】红提 皮薄红亮 秘鲁的小甜甜"
-    }, {
-      "img":"https://sapp-eshop.oss-cn-beijing.aliyuncs.com/banner2.png",
-      "goodId": "{商品id}",
-      "goodName": "{商品名称}"
-    }],
-    subjects: [{
-      "img": "https://sapp-eshop.oss-cn-beijing.aliyuncs.com/subject_hot.png",
-      "goods": [{
-        "img": "https://sapp-eshop.oss-cn-beijing.aliyuncs.com/hot_1.png",
-        "goodId": "112",
-        "goodName": "【大连】油桃 果脆味甜 桃香怡人",
-        "prize": "60",
-        "originalPrize": "63",
-        "sales": "已售10"
-      }, {
-        "img": "https://sapp-eshop.oss-cn-beijing.aliyuncs.com/hot2.png",
-        "goodId": "113",
-        "goodName": "【秘鲁】红提 皮薄红亮 秘鲁的小甜甜",
-        "prize": "160",
-        "originalPrize": "168",
-        "sales": "已售783"
-        }, {
-        "img": "https://sapp-eshop.oss-cn-beijing.aliyuncs.com/hot3.png",
-        "goodId": "113",
-        "goodName": "沃柑 阳光不改 甜蜜如初",
-        "prize": "3.45",
-        "originalPrize": "5",
-        "sales": "已售1230"
-        }]
-    }, {
-        "img": "https://sapp-eshop.oss-cn-beijing.aliyuncs.com/subject_discount.png",
-      "goods": [{
-        "img": "https://sapp-eshop.oss-cn-beijing.aliyuncs.com/discount1.png",
-        "goodId": "112",
-        "goodName": "【智利】蓝莓 中大果 口感脆甜 略微带酸",
-        "prize": "14.3",
-        "originalPrize": "18",
-        "sales": "已售87"
-      }, {
-        "img": "https://sapp-eshop.oss-cn-beijing.aliyuncs.com/discount2.png",
-        "goodId": "112",
-        "goodName": "【小汤山】草莓 有机种植 红颜",
-        "prize": "7.5",
-        "originalPrize": "8",
-        "sales": "已售287"
-      }]
-    }]
+    banners: null,
+    subjects: null
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    console.log(app.globalData)
+    var that = this
+    wx.showNavigationBarLoading()
+    wx.showLoading({
+      title: '努力加载中',
+    })
+
+    //请求首页数据
+    wx.request({
+      url: app.baseurl + '',
+      data: {
+        seller_id: app.seller_id
+      },
+      method: 'POST',
+      success: function(res) {
+        that.setData({
+          banners: res.data.data.banners,
+          subjects: res.data.data.subjects
+        })
+      },
+      fail: function(res) {
+        that.setData({
+          banners: [{
+            "img": "https://sapp-eshop.oss-cn-beijing.aliyuncs.com/banner1.png",
+            "product_id": "113",
+            "product_name": "【秘鲁】红提 皮薄红亮 秘鲁的小甜甜"
+          }, {
+            "img": "https://sapp-eshop.oss-cn-beijing.aliyuncs.com/banner2.png",
+            "product_id": "{商品id}",
+            "product_name": "{商品名称}"
+          }],
+          subjects: [{
+            "img": "https://sapp-eshop.oss-cn-beijing.aliyuncs.com/subject_hot.png",
+            "goods": [{
+              "img": "https://sapp-eshop.oss-cn-beijing.aliyuncs.com/hot_1.png",
+              "product_id": "112",
+              "product_name": "【大连】油桃 果脆味甜 桃香怡人",
+              "prize": "60",
+              "original_prize": "63",
+              "sales_num": "已售10"
+            }, {
+              "img": "https://sapp-eshop.oss-cn-beijing.aliyuncs.com/hot2.png",
+              "product_id": "113",
+              "product_name": "【秘鲁】红提 皮薄红亮 秘鲁的小甜甜",
+              "prize": "160",
+              "original_prize": "168",
+              "sales_num": "已售783"
+            }, {
+              "img": "https://sapp-eshop.oss-cn-beijing.aliyuncs.com/hot3.png",
+              "product_id": "113",
+              "product_name": "沃柑 阳光不改 甜蜜如初",
+              "prize": "3.45",
+              "original_prize": "5",
+              "sales_num": "已售1230"
+            }]
+          }, {
+            "img": "https://sapp-eshop.oss-cn-beijing.aliyuncs.com/subject_discount.png",
+            "goods": [{
+              "img": "https://sapp-eshop.oss-cn-beijing.aliyuncs.com/discount1.png",
+              "product_id": "112",
+              "product_name": "【智利】蓝莓 中大果 口感脆甜 略微带酸",
+              "prize": "14.3",
+              "original_prize": "18",
+              "sales_num": "已售87"
+            }, {
+              "img": "https://sapp-eshop.oss-cn-beijing.aliyuncs.com/discount2.png",
+              "product_id": "112",
+              "product_name": "【小汤山】草莓 有机种植 红颜",
+              "prize": "7.5",
+              "original_prize": "8",
+              "sales_num": "已售287"
+            }]
+          }]
+        })
+      },
+      complete: function() {
+        wx.hideNavigationBarLoading()
+        wx.hideLoading()
+      }
+    })
   },
 
   /**
@@ -119,10 +151,10 @@ Page({
   /**
    * 跳转商品详情页
    */
-  goGoodDetail: function(options) {
-    var good = options.currentTarget.dataset.src
+  goProductDetail: function(options) {
+    var product = options.currentTarget.dataset.src
     wx.navigateTo({
-      url: '/pages/goodDetail/goodDetail' + '?goodId=' + good.goodId + '&goodName=' + good.goodName,
+      url: '/pages/productDetail/productDetail' + '?product_id=' + product.product_id + '&product_name=' + product.product_name,
     })
   }
 })

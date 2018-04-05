@@ -1,5 +1,5 @@
 // pages/goodDetail/goodDetail.js
-var goodId;
+var product_id;
 
 Page({
 
@@ -21,7 +21,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    goodId = options.goodId
+    product_id = options.product_id
     this.setData({
       'good.goodName': options.goodName,
     })
