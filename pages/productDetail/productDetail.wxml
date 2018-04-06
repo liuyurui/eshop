@@ -7,12 +7,12 @@
   </block>
 </swiper>
 <view class='desc'>
-  <text class='good-name'>{{good.goodName}}</text>
+  <text class='good-name'>{{product.product_name}}</text>
   <view>
-    <text class='good-prize'>￥{{good.prize}}</text>
-    <text class='original-prize'>￥{{good.originalPrize}}</text>
+    <text class='good-prize'>￥{{product.prize}}</text>
+    <text class='original-prize'>￥{{product.original_prize}}</text>
   </view>
-  <text class='sales'>{{good.sales}}</text>
+  <text class='sales'>{{product.sales_num}}</text>
 </view>
 <image class='good-detail-image' src='/image/good_detail.png' mode='widthFix'></image>
 
@@ -21,4 +21,36 @@
 </view>
 
 <view class='footer'>
+  <view class='custom-service'>
+    <contact-button style='opacity:0;position:absolute;left:0;' size='27' type='default-dark' session-from='weapp'></contact-button>
+    <contact-button style='opacity:0;position:absolute;right:0;' size='27' type='default-dark' session-from='weapp'></contact-button>
+    <contact-button style='opacity:0;position:absolute;' size='27' type='default-dark' session-from='weapp'></contact-button>
+    <contact-button style='opacity:0;position:absolute;left:0;bottom:0;' size='27' type='default-dark' session-from='weapp'></contact-button>
+    <contact-button style='opacity:0;position:absolute;right:0;bottom:0;' size='27' type='default-dark' session-from='weapp'></contact-button>
+    <contact-button style='opacity:0;position:absolute;bottom:0;' size='27' type='default-dark' session-from='weapp'></contact-button>
+    <image src='/image/custom_service.png'></image>
+    <text>客服</text>
+  </view>
+  <view class='shopping-trolley' bindtap='goShoppingTrolley'>
+    <text class="shopping-trplley-num {{shopping_trolley_num == 0 ? 'hidden' : ''}}">({{shopping_trolley_num}})</text>
+    <image src='/image/tab_shopping_trolley.png'></image>
+    <text>购物车</text>
+  </view>
+  <view class='join-shopping-trolley' bindtap='joinShoppingTrolley'>加入购物车</view>
+  <view class='buy' bindtap='buy'>立即购买</view>
+</view>
+
+<!--弹窗-->
+<view class='show-popup' hidden='{{hidePopup}}'>
+  <view class="popup-mask" bindtap="closePopupTap"></view>
+  <view class='popup-contents'>
+    <view class='pop_product_info'>
+      <image class='pop-product-image' src=''></image>
+      <view>
+        <view class='pop-product-name'>{{product.product_name}}</view>
+        <view class='pop-product-prize'>￥{{product.prize}}</view>
+      </view>
+      <view class="pop-product-close" bindtap="closePopupTap"></view>
+    </view>
+  </view>
 </view>

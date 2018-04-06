@@ -4,7 +4,10 @@
     "pages/index/index",
     "pages/logs/logs",
     "pages/shop/shop",
-    "pages/productDetail/productDetail"
+    "pages/productDetail/productDetail",
+    "pages/shoppingTrolley/shoppingTrolley",
+    "pages/all/all",
+    "pages/person/person"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -16,19 +19,37 @@
     "list": [
       {
         "pagePath": "pages/home/home",
-        "text": "首页"
+        "text": "首页",
+        "iconPath": "image/tab_home.png",
+        "selectedIconPath": "image/tab_home_selected.png"
+      },
+      {
+        "pagePath": "pages/all/all",
+        "text": "全部商品",
+        "iconPath": "image/tab_all.png",
+        "selectedIconPath": "image/tab_all_selected.png"
+      },
+      {
+        "pagePath": "pages/shoppingTrolley/shoppingTrolley",
+        "text": "购物车",
+        "iconPath": "image/tab_shopping_trolley.png",
+        "selectedIconPath": "image/tab_shopping_trolley_selected.png"
+      },
+      {
+        "pagePath": "pages/person/person",
+        "text": "我的",
+        "iconPath": "image/tab_person.png",
+        "selectedIconPath": "image/tab_person_selected.png"
       },
       {
         "pagePath": "pages/shop/shop",
-        "text": "门店"
-      },
-      {
-        "pagePath": "pages/logs/logs",
-        "text": "日志"
+        "text": "门店",
+        "iconPath": "image/tab_shop.png",
+        "selectedIconPath": "image/tab_shop_selected.png"
       }
     ],
-    "color": "#a6b0bd",
-    "selectedColor": "#333333",
+    "color": "#707070",
+    "selectedColor": "#9F79EE",
     "backgroundColor": "#ffffff"
   }
 }

@@ -8,8 +8,6 @@ Page({
    */
   data: {
     autoplay: false,
-    banners: null,
-    subjects: null
   },
 
   /**
@@ -35,6 +33,12 @@ Page({
           banners: res.data.data.banners,
           subjects: res.data.data.subjects
         })
+
+        if (res.data.data.banners.length > 1) {
+          that.setData({
+            autoplay: true
+          })
+        }
       },
       fail: function(res) {
         that.setData({
@@ -89,6 +93,10 @@ Page({
               "sales_num": "已售287"
             }]
           }]
+        })
+
+        that.setData({
+          autoplay: true
         })
       },
       complete: function() {

@@ -24,7 +24,7 @@
   height: 520rpx;
   box-sizing: content-box;
   background-color: white;
-  border: 1px solid #eeeeee;
+  border: 1px solid #ffffff;
   position: relative;
   margin-top: 20rpx;
 }

@@ -1,4 +1,5 @@
 // pages/goodDetail/goodDetail.js
+var invoke = require('../../utils/invoke.js')
 var product_id;
 
 Page({
@@ -7,12 +8,14 @@ Page({
    * 页面的初始数据
    */
   data: {
+    hidePopup: true,
+    shopping_trolley_num: 0,
     banners: ["https://sapp-eshop.oss-cn-beijing.aliyuncs.com/hot_1.png", "https://sapp-eshop.oss-cn-beijing.aliyuncs.com/discount2.png"],
-    good: {
-      goodName: '',
+    product: {
+      product_name: '',
       prize: 38,
-      originalPrize: 40,
-      sales: 150,
+      original_prize: 40,
+      sales_num: 150,
     },
     details: ["https://sapp-eshop.oss-cn-beijing.aliyuncs.com/hot3.png", "https://sapp-eshop.oss-cn-beijing.aliyuncs.com/hot2.png", "https://sapp-eshop.oss-cn-beijing.aliyuncs.com/hot_1.png"],
   },
@@ -23,7 +26,7 @@ Page({
   onLoad: function (options) {
     product_id = options.product_id
     this.setData({
-      'good.goodName': options.goodName,
+      'product.product_name': options.product_name,
     })
   },
 
@@ -74,5 +77,45 @@ Page({
    */
   onShareAppMessage: function () {
   
+  },
+
+  /**自定义函数开始 */
+  /**
+   * 关闭弹窗
+   */
+  closePopupTap: function () {
+    this.setData({
+      hidePopup: true
+    })
+  },
+
+  /**
+   * 显示弹窗
+   */
+  showPopupTap: function() {
+    this.setData({
+      hidePopup: false
+    })
+  },
+
+  /**
+   * 跳转购物车
+   */
+  goShoppingTrolley: function() {
+    invoke.goShoppingTrolley()
+  },
+
+  /**
+   * 加入购物车
+   */
+  joinShoppingTrolley: function() {
+    this.showPopupTap()
+  },
+
+  /**
+   * 立即购买
+   */
+  buy: function() {
+    this.showPopupTap()
   }
 })
