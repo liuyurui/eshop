@@ -19,7 +19,7 @@
     "list": [
       {
         "pagePath": "pages/home/home",
-        "text": "首页",
+        "text": "严选商品",
         "iconPath": "image/tab_home.png",
         "selectedIconPath": "image/tab_home_selected.png"
       },

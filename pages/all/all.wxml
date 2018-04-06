@@ -1,2 +1,22 @@
 <!--pages/all/all.wxml-->
-<text>pages/all/all.wxml</text>
+<view class='container'>
+  <view class='classify'>
+    <block wx:for='{{classify}}'>
+      <view class='classify-item' bindtap='selectClassify' data-src='{{item}}' data-index='{{index}}'>
+        <view class='classify-indicator' hidden='{{index != current_classify}}'></view>
+        <view class='classify-info{{index == current_classify ? "-on" : ""}}'>{{item.name}}</view>
+      </view>
+    </block>
+  </view>
+  <view class='classify-list'>
+    <view class='classify-product' wx:for='{{classify_products}}' bindtap='goProductDetail' data-src='{{item}}'>
+      <image src='{{item.img}}'></image>
+      <view class='product-intro'>
+        <view class='product-name'>{{item.product_name}}</view>
+        <text class='product-prize'>￥{{item.prize}}</text>
+        <text class='product-original-prize'>￥{{item.original_prize}}</text>
+        <text class='product-sales-num'>{{item.sales_num}}</text>
+      </view>
+    </view>
+  </view>
+</view>

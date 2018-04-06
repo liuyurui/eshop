@@ -1,1 +1,100 @@
 /* pages/all/all.wxss */
+page {
+  height: 100%;
+}
+.container {
+  height: 100%;
+  box-sizing: border-box;
+} 
+.classify {
+  width: 180rpx;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  background-color: #fff;
+}
+.classify-list {
+  width: 570rpx;
+  margin-left: 180rpx;
+  min-height: 100%;
+  background-color: #EEEFF1;
+  padding: 10rpx 0 10rpx 0;
+}
+.classify-item {
+  width: 100%;
+  height: 108rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.classify-item .classify-info {
+  width: 100%;
+  height: 108rpx;
+  line-height: 108rpx;
+  font-size: 30rpx;
+  text-align: center;
+  white-space: nowrap;
+}
+.classify-item .classify-info-on {
+  width: 100%;
+  height: 108rpx;
+  line-height: 108rpx;
+  font-size: 32rpx;
+  text-align: center;
+  color: #9F79EE;
+}
+.classify-indicator {
+  position: absolute;
+  margin: auto 0;
+  left: 0;
+  width: 6rpx;
+  height: 40rpx;
+  background-color: #9F79EE;
+}
+.classify-product {
+  display: flex;
+  align-content: stretch;
+  height: 200rpx;
+  margin: 10rpx 10rpx 0 10rpx; 
+  background-color: #fff;
+  border-radius: 10rpx;
+}
+.classify-product image {
+  width: 180rpx;
+  height: 180rpx;
+  margin: 10rpx 10rpx 10rpx 10rpx;
+}
+.product-intro {
+  position: relative;
+  flex: 1;
+  height: 200rpx;
+}
+.product-intro .product-name {
+  display: -webkit-box;
+  font-size: 34rpx;
+  color: #000000;
+  line-height: 34rpx;
+  word-break: break-all;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  margin: 20rpx 10rpx;
+}
+.product-intro .product-prize {
+  font-size: 30rpx;
+  color: red;
+}
+.product-original-prize {
+  font-size: 28rpx;
+  color: gray;
+  text-decoration: line-through;
+}
+.product-sales-num {
+  display: block;
+  position: absolute;
+  right: 10rpx;
+  bottom: 10rpx;
+  font-size: 26rpx;
+  color: gray;
+}

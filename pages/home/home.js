@@ -23,9 +23,9 @@ Page({
 
     //请求首页数据
     wx.request({
-      url: app.baseurl + '',
+      url: app.globalData.baseurl + '',
       data: {
-        seller_id: app.seller_id
+        seller_id: app.globalData.seller_id
       },
       method: 'POST',
       success: function(res) {
