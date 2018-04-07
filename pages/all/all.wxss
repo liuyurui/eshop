@@ -84,9 +84,10 @@ page {
 .product-intro .product-prize {
   font-size: 30rpx;
   color: red;
+  margin: 0 10rpx;
 }
 .product-original-prize {
-  font-size: 28rpx;
+  font-size: 26rpx;
   color: gray;
   text-decoration: line-through;
 }

@@ -9,28 +9,6 @@ Page({
    */
   data: {
     current_classify: 0,
-    classify: [{
-      name: "所有商品",
-      product_type: "all"
-    }, {
-      name: "民谣吉他",
-      product_type: "gita"
-    }, {
-      name: "钢琴",
-      product_type: "gangqin"
-    }, {
-      name: "古筝",
-      product_type: "guzhen"
-    }, {
-      name: "二胡",
-      product_type: "erhu"
-    }, {
-      name: "笛子",
-      product_type: "dizi"
-    }, {
-      name: "其他乐器",
-      product_type: "other"
-    }]
   },
 
   /**
@@ -103,6 +81,48 @@ Page({
     }])
     this.setData({
       classify_products: classifys.get('all')
+    })
+
+    var that = this
+    wx.showNavigationBarLoading()
+    wx.request({
+      url: app.globalData.baseurl + 'query/allclassify',
+      data: {
+        seller_id: app.globalData.seller_id
+      },
+      method: 'POST',
+      success: function (res) {
+
+      },
+      fail: function (res) {
+        that.setData({
+          classify: [{
+            name: "所有商品",
+            product_type: "all"
+          }, {
+            name: "民谣吉他",
+            product_type: "gita"
+          }, {
+            name: "钢琴",
+            product_type: "gangqin"
+          }, {
+            name: "古筝",
+            product_type: "guzhen"
+          }, {
+            name: "二胡",
+            product_type: "erhu"
+          }, {
+            name: "笛子",
+            product_type: "dizi"
+          }, {
+            name: "其他乐器",
+            product_type: "other"
+          }]
+        })
+      },
+      complete: res => {
+        wx.hideNavigationBarLoading()
+      }
     })
   },
 

@@ -1,18 +1,33 @@
 // pages/person/person.js
+var app = getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-  
+    
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    var that = this
+    if (app.globalData.userInfo == null) {
+      wx.getUserInfo({
+        success: res => {
+          app.globalData.userInfo = res.userInfo
+          that.setData({
+            userInfo: app.globalData.userInfo
+          })
+        }
+      })
+    } else {
+      this.setData({
+        userInfo: app.globalData.userInfo
+      })
+    }
   },
 
   /**
@@ -62,5 +77,9 @@ Page({
    */
   onShareAppMessage: function () {
   
+  },
+
+  /**自定义函数开始 */
+  goAddrManage: function () {
   }
 })
