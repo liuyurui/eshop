@@ -1,1 +1,134 @@
 /* pages/shop/shop.wxss */
+.container {
+  padding: 50rpx, 0rpx, 0rpx;
+}
+.title_area {
+  height: 230rpx;
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+.title_area_left {
+  width: 600rpx;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  box-sizing: border-box;
+  padding: 0rpx 0rpx 0rpx 50rpx;
+}
+.title {
+  width: 100%;
+  font-size: 50rpx;
+  color: red;
+  /*
+  text-shadow: -1rpx -1rpx white, 1rpx 1rpx #333;*/
+  text-shadow: 0 0 4px white, 0 -2px 4px #ff3, 2px -4px 6px #fd3, -6px -8px 8px #f80, 2px -8px 10px #f20;
+}
+.title_desc {
+  width: 100%;
+  font-size: 30rpx;
+  color: gray;
+}
+.title_area_right {
+  width: 150rpx;
+  height: 150rpx;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  padding-left: 16rpx;
+}
+.logo {
+  border-radius: 50%;
+  width: 100rpx;
+  height: 100rpx;
+}
+
+.divider {
+  position: absolute;
+  width: 678rpx;
+  border-bottom: 1px dashed gray;
+  left: 36rpx;
+  bottom: 0;
+}
+.detail {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  margin-top: 20rpx;
+}
+.detail_line {
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-around;
+  padding-top: 12rpx;
+}
+.detail_left_image {
+  width: 30rpx;
+  height: 30rpx;
+  margin-left: 42rpx;
+}
+.detail_right_image,  .detail_right_image_gone {
+  width: 30rpx;
+  height: 30rpx;
+  margin-right: 32rpx;
+}
+.detail text {
+  width: 590rpx;
+  font-size: 32rpx;
+}
+.show_title {
+  font-size: 36rpx;
+}
+.show_class {
+  margin-top: 30rpx;
+}
+.show_box {
+  width: 650rpx;
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-left: 50rpx;
+  margin-right: 50rpx;
+  margin-top: 20rpx;
+  border: 2px solid #ecedf1;
+}
+.box_content {
+  width: 310rpx;
+  height: 232.5rpx;
+  overflow: hidden;
+  margin-bottom: 15rpx;
+}
+.box_content image {
+  width: 310rpx;
+  height: 232.5rpx;
+}
+.show_line {
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: flex-start;
+}
+.show_line image {
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 10rpx;
+  margin-left: 44rpx;
+}
+.detail_right_image_gone {
+  visibility: hidden;
+}
+.shop {
+  width: 100%;
+}
+.top {
+  position: relative;
+}

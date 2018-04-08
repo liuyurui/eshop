@@ -1,2 +1,50 @@
 <!--pages/shop/shop.wxml-->
-<text>pages/shop/shop.wxml</text>
+<view class='container'>
+  <!--标题 -->
+  <view class='top'>
+    <view class='title_area'>
+      <view class='title_area_left'>
+        <text class='title'>知音琴行</text>
+        <text class='title_desc'>教育学校·培训·销售</text>
+      </view>
+      <view class='title_area_right'>
+        <image class='logo' src='/image/logo.png'></image>
+      </view>
+      <view class='divider'></view>
+    </view>
+    <view class='divider'></view>
+  </view>
+  <!--详细信息-->
+  <view class='detail'>
+    <view class='detail_line' bindtap='showLocation'>
+      <image class='detail_left_image' src='/image/location.png'></image>
+      <text>江西省永新县市政广场知音琴行</text>
+      <image class="detail_right_image" src='/image/go.png'></image>
+    </view>
+    <view class='detail_line'>
+      <image class='detail_left_image' src='/image/time.png'></image>
+      <text>8:00-20:00</text>
+      <image class="detail_right_image_gone" src='/image/go.png'></image>
+    </view>
+    <view class='detail_line' bindtap='call'>
+      <image class='detail_left_image' src='/image/phone.png'></image>
+      <text>18170604954</text>
+      <image class="detail_right_image" src='/image/go.png'></image>
+    </view>
+    <view class='detail_line'>
+      <image class='detail_left_image' src='/image/touxiang.png'></image>
+      <text>胡老师</text>
+      <image class="detail_right_image_gone" src='/image/go.png' id='contact'></image>
+    </view>
+  </view>
+  <!--门店信息-->
+  <view class='show_class'>
+    <view class='show_line'>
+      <image src='/image/shop.png'></image>
+      <text class='show_title'>门店信息</text>
+    </view>
+    <view class='show_box'>
+      <image class='shop' src='http://zhiyinpiano.oss-cn-beijing.aliyuncs.com/shop/shop.jpg' bindtap='showImage' data-src='http://zhiyinpiano.oss-cn-beijing.aliyuncs.com/shop/shop.jpg'></image>
+    </view>
+  </view>
+</view>

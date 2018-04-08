@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-  
+    
   },
 
   /**
@@ -62,5 +62,36 @@ Page({
    */
   onShareAppMessage: function () {
   
+  },
+
+  showImage: function (e) {
+    var arr = Array();
+    arr.push(e.target.dataset.src);
+    wx.previewImage({
+      urls: arr,
+    });
+  },
+  call: function () {
+    wx.makePhoneCall({
+      phoneNumber: '18170604954',
+    })
+  },
+  showLocation: function () {
+    /*
+    wx.getLocation({
+      type: 'gcj02',
+      success: function (res) {
+        wx.showModal({
+          title: 'aa',
+          content: 'latitude:' + res.latitude + 'longitude:' + res.longitude,
+        })
+      },
+    })*/
+    wx.openLocation({
+      latitude: 26.96212,
+      longitude: 114.254166,
+      name: '知音琴行',
+      address: '江西省永新县市政广场龙湾华庭营销中心右侧三栋4号',
+    })
   }
 })
