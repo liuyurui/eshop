@@ -1,5 +1,7 @@
 // pages/person/person.js
 var app = getApp()
+var loginUtil = require('../../utils/loginUtil.js')
+
 Page({
 
   /**
@@ -13,21 +15,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var that = this
-    if (app.globalData.userInfo == null) {
-      wx.getUserInfo({
-        success: res => {
-          app.globalData.userInfo = res.userInfo
-          that.setData({
-            userInfo: app.globalData.userInfo
-          })
-        }
-      })
-    } else {
-      this.setData({
-        userInfo: app.globalData.userInfo
-      })
-    }
+    
   },
 
   /**
@@ -41,7 +29,8 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-  
+    this.getUserInfo()
+    loginUtil.login()
   },
 
   /**
@@ -76,10 +65,53 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-  
+    
   },
 
   /**自定义函数开始 */
+  /**
+   * 获取用户信息，显示在我的
+   */
+  getUserInfo: function () {
+    var that = this
+    if (app.globalData.userInfo == null) {
+      //判断是否关闭了授权
+      wx.getSetting({
+        success: res => {
+          if (res.authSetting['scope.userInfo']) {
+            wx.getUserInfo({
+              success: res => {
+                app.globalData.userInfo = res.userInfo
+                that.setData({
+                  userInfo: app.globalData.userInfo
+                })
+                that.uploadUserInfo();
+              }
+            })
+          } else {
+            wx.openSetting({
+              
+            })
+          }
+        }
+      })
+    } else {
+      this.setData({
+        userInfo: app.globalData.userInfo
+      })
+    }
+  },
+
+  /**
+   * 上传用户信息
+   */
+  uploadUserInfo: function () {
+
+  },
+
   goAddrManage: function () {
+    wx.navigateTo({
+      url: '/pages/addrManage/addrManage',
+    })
   }
 })

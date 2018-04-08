@@ -1,2 +1,23 @@
 <!--pages/shoppingTrolley/shoppingTrolley.wxml-->
-<text>pages/shoppingTrolley/shoppingTrolley.wxml</text>
+<view class='container'>
+  <view class='product' wx:for='{{products}}' bindtap='goProductDetail' data-src='{{item}}'>
+    <view class='select-area' catchtap='selectProduct' data-src='{{item}}' data-index='{{index}}'>
+      <image src='{{item.selected ? "/image/selected.png" : "/image/unselected.png"}}'></image>
+    </view>
+    <image class='product-image' src='{{item.img}}'></image>
+    <view class='product-content'>
+      <text class='product-name'>{{item.product_name}}</text>
+      <text class='product-prize'>￥{{item.prize}}</text>
+      <view class='delete' catchtap='deleteProduct' data-src='{{item}}' data-index='{{index}}'>
+        <image src='/image/delete.png'></image>
+      </view>
+    </view>
+  </view>
+
+  <!--空购物车-->
+  <view class='empty' hidden='{{products != null && products.length != 0}}'>
+    <image src='/image/tab_shopping_trolley_selected.png'></image>
+    <text>~购物车什么都没有哦~</text>
+    <view bindtap='goShopping'>去购物</view>
+  </view>
+</view>

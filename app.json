@@ -7,7 +7,8 @@
     "pages/productDetail/productDetail",
     "pages/shoppingTrolley/shoppingTrolley",
     "pages/all/all",
-    "pages/person/person"
+    "pages/person/person",
+    "pages/addrManage/addrManage"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -43,7 +44,7 @@
       },
       {
         "pagePath": "pages/shop/shop",
-        "text": "门店",
+        "text": "实体门店",
         "iconPath": "image/tab_shop.png",
         "selectedIconPath": "image/tab_shop_selected.png"
       }

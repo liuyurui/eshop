@@ -5,6 +5,17 @@ function goShoppingTrolley() {
   })
 }
 
+function goProductDetail(params) {
+  var target = '/pages/productDetail/productDetail'
+  if (params != undefined && params != null && params != '') {
+    target = target + '?' + params;
+  }
+  wx.navigateTo({
+    url: target,
+  })
+}
+
 module.exports = {
-  goShoppingTrolley: goShoppingTrolley
+  goShoppingTrolley: goShoppingTrolley,
+  goProductDetail: goProductDetail
 }

@@ -1,8 +1,8 @@
-function login() {
+function login(options) {
   var app = getApp()
   var that = this;
-  var token = that.globalData.token;
-  if (token) {
+  var token = app.globalData.token;
+  if (token != null) {
     //校验token
   } else {
     //首次登录
@@ -25,4 +25,8 @@ function login() {
       }
     })  
   }
+}
+
+module.exports = {
+  login: login
 }
