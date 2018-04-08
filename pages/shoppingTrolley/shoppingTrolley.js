@@ -1,5 +1,7 @@
 // pages/shoppingTrolley/shoppingTrolley.js
 var invoke = require('../../utils/invoke.js')
+var loginUtil = require('../../utils/loginUtil.js')
+
 Page({
 
   /**
@@ -99,7 +101,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-  
+    wx.startPullDownRefresh()
   },
 
   /**
@@ -120,7 +122,8 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-  
+    //请求购物车数据
+    loginUtil.login(this.requestShoppingTrolley)
   },
 
   /**
@@ -179,5 +182,12 @@ Page({
     wx.switchTab({
       url: '/pages/all/all',
     })
+  },
+
+  /**
+   * 请求购物车数据
+   */
+  requestShoppingTrolley: function () {
+    wx.stopPullDownRefresh()
   }
 })
