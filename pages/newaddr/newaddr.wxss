@@ -1,0 +1,30 @@
+ pages/newaddr/newaddr.wxss */
+.line {
+  /* width: 100%; */
+  height: 80rpx;
+  display: flex;
+  align-content: stretch;
+  margin: 0 20rpx;
+  border-bottom: thin solid gainsboro; 
+}
+
+.line .desc {
+  width: 160rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  vertical-align: middle;
+}
+.line picker {
+  flex: 1;
+  height: 80rpx;
+}
+.line picker input {
+  height: 80rpx;
+  width: 50%;
+}
+.line input {
+  flex: 1;
+  height: 100%;
+  line-height: 100%;
+  vertical-align: middle;
+}

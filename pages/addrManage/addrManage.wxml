@@ -1,2 +1,5 @@
 <!--pages/addrManage/addrManage.wxml-->
-<text>pages/addrManage/addrManage.wxml</text>
+<view>
+
+  <view class='footer' bindtap='newAddr'>+ 新增收货地址</view>
+</view>

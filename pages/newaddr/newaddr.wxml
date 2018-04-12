@@ -1,0 +1,21 @@
+<!--pages/newaddr/newaddr.wxml-->
+<view>
+  <view class='line'>
+    <text class='desc'>收货人</text>
+    <input placeholder='姓名'></input>
+  </view>
+  <view class='line'>
+    <text class='desc'>联系电话</text>
+    <input placeholder='手机号'></input>
+  </view>
+  <view class='line'>
+    <text class='desc'>收货地址</text>
+    <picker mode='region' value='{{region}}'>
+       <input placeholder='请选择地址' disabled='true'></input> 
+    </picker>
+  </view>
+  <view class='line'>
+    <text class='desc'>详细地址</text>
+    <input placeholder='手机号'></input>
+  </view>
+</view>
