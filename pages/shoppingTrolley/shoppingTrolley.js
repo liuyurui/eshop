@@ -87,7 +87,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    wx.hideShareMenu()
+    
   },
 
   /**
@@ -108,7 +108,7 @@ Page({
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
-    
+    wx.stopPullDownRefresh()
   },
 
   /**
@@ -126,25 +126,11 @@ Page({
     loginUtil.login(this.requestShoppingTrolley)
   },
 
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-  
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-  
-  },
   /**自定义函数开始 */
   /**
    * 跳转到商品详情页
    */
   goProductDetail: function (options) {
-    console.log('in1')
     var params = 'product_id=' + options.currentTarget.dataset.src.product_id
     params += '&product_name=' + options.currentTarget.dataset.src.product_name
     invoke.goProductDetail(params)

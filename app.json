@@ -1,6 +1,5 @@
 {
   "pages": [
-    "pages/newaddr/newaddr",
     "pages/home/home",
     "pages/index/index",
     "pages/logs/logs",
@@ -9,7 +8,8 @@
     "pages/shoppingTrolley/shoppingTrolley",
     "pages/all/all",
     "pages/person/person",
-    "pages/addrManage/addrManage"    
+    "pages/addrManage/addrManage",
+    "pages/newaddr/newaddr" 
   ],
   "window": {
     "backgroundTextStyle": "light",
