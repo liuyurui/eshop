@@ -12,7 +12,7 @@
   <block wx:for='{{subjects}}'>
     <image class='subject-banner' src='{{item.img}}' mode='aspectFill'></image>
     <view class="products-container">
-      <view class='product' wx:for="{{item.goods}}" wx:for-item='product' bindtap='goProductDetail' data-src='{{product}}'>
+      <view class='product' wx:for="{{item.products}}" wx:for-item='product' bindtap='goProductDetail' data-src='{{product}}'>
         <image src='{{product.img}}' lazy-load='true' mode='aspectFill'></image>
         <text class='title'>{{product.product_name}}</text>
         <view>

@@ -2,11 +2,11 @@
 <view>
   <view class='line'>
     <text class='desc'>收货人</text>
-    <input placeholder='姓名'></input>
+    <input placeholder='姓名' bindinput='bindNameInput'></input>
   </view>
   <view class='line'>
     <text class='desc'>联系电话</text>
-    <input placeholder='手机号'></input>
+    <input placeholder='手机号' bindinput='bindPhoneInput'></input>
   </view>
   <view class='line'>
     <text class='desc'>收货地址</text>
@@ -16,6 +16,8 @@
   </view>
   <view class='line'>
     <text class='desc'>详细地址</text>
-    <input placeholder='手机号'></input>
+    <input placeholder='详细地址'></input>
   </view>
+
+  <view class='footer' bindtap='newAddr'>保存</view>
 </view>

@@ -1,4 +1,8 @@
 // pages/newaddr/newaddr.js
+var app = getApp()
+var loginUtil = require('../../utils/loginUtil.js')
+var name, phone
+
 Page({
 
   /**
@@ -41,5 +45,28 @@ Page({
    */
   onUnload: function () {
   
+  },
+
+  bindNameInput: function(e) {
+    name = e.detail.value
+  },
+
+  bindPhoneInput: function(e) {
+    phone = e.detail.value
+  },
+
+  newAddr: function () {
+    var db = wx.cloud.database()
+    db.collection('receiving_addr').add({
+      data: {
+        receiver: name,
+        phone: phone
+      },
+      success: function (res) {
+        // res 是一个对象，其中有 _id 字段标记刚创建的记录的 id
+        console.log(res)
+      },
+      fail: console.error
+    })
   }
 })

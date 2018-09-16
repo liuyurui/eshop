@@ -13,8 +13,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    wx.showNavigationBarLoading()
-    loginUtil.login(this.queryAddrs)
+    this.queryAddrs()
   },
 
   /**
@@ -28,7 +27,11 @@ Page({
    * 查询地址
    */
   queryAddrs: function () {
-
+    var db = wx.cloud.database()
+    db.collection('receiving_addr').get()
+    .then(res => {
+      console.log(res)
+    })
   },
   
   /**

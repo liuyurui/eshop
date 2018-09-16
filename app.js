@@ -7,7 +7,11 @@ App({
     wx.setStorageSync('logs', logs)
 
     // 登录
-    
+    wx.cloud.init({
+      traceUser: true,
+      env: 'eshop-42193f'
+    })
+
     // 获取用户信息
     wx.getSetting({
       success: res => {
@@ -32,7 +36,7 @@ App({
   globalData: {
     userInfo: null,
     token: null,
-    baseurl: 'https://sapp.duning.net/fruitfac/',
+    baseurl: 'https://sapp.duning.net/sapp/shop/',
     seller_id: 'asd'
   }
 })

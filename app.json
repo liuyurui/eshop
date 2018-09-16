@@ -9,7 +9,7 @@
     "pages/all/all",
     "pages/person/person",
     "pages/addrManage/addrManage",
-    "pages/newaddr/newaddr" 
+    "pages/newaddr/newaddr"
   ],
   "window": {
     "backgroundTextStyle": "light",

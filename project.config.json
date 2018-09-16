@@ -8,7 +8,7 @@
 		"newFeature": true
 	},
 	"compileType": "miniprogram",
-	"libVersion": "1.9.93",
+	"libVersion": "2.3.0",
 	"appid": "wx81f2146900b390f3",
 	"projectname": "eshop_common",
 	"isGameTourist": false,
@@ -29,5 +29,6 @@
 			"current": -1,
 			"list": []
 		}
-	}
+	},
+  "cloudfunctionRoot": "./functions/"
 }

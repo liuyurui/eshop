@@ -24,13 +24,14 @@ function login(callback) {
           // 发送 res.code 到后台换取 openId, sessionKey, unionId
           if (res.code) {
             wx.request({
-              url: app.globalData.baseurl + 'login',
+              url: app.globalData.baseurl + 'user/login',
               data: {
-                code: res.code
+                code: res.code,
+                seller_id: app.globalData.seller_id
               },
               method: 'POST',
               success: res => {
-                app.globalData.token = res.token
+                app.globalData.token = res.data.token
                 wx.setStorageSync('token', app.globalData.token)
               },
               complete: res => {
@@ -38,6 +39,8 @@ function login(callback) {
                   that.lastCallback()
                 }
                 logining = false
+                console.log(app.globalData.baseurl + 'user/login:')
+                console.log(res)
               }
             })
           } else {
